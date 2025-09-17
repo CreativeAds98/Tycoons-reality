@@ -14,7 +14,39 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
+<style>
 
+
+.logo-slider {
+  overflow: hidden;
+  position: relative;
+  width: 100%;
+  background: #fff;
+  padding: 20px 0;
+}
+
+.logo-track {
+  display: flex;
+  width: calc(200%); /* Double width for infinite loop */
+  animation: scroll 20s linear infinite;
+}
+
+.logo-track img {
+  height: 80px;
+  margin: 0 40px;
+  object-fit: contain;
+}
+
+/* Adjust one logo’s height */
+.logo-track img:nth-child(4) {
+  height: 100px;
+}
+
+@keyframes scroll {
+  from { transform: translateX(0); }
+  to   { transform: translateX(-50%); }
+}
+</style>
     <!-- master stylesheet -->
     <link rel="stylesheet" href="css/style.css">
     <!-- Responsive stylesheet -->
@@ -75,12 +107,12 @@
                                                         <li><a href="services.html#investment-services">Investment Management</a></li>
                                                     </ul>
                                                 </li>
-                                                <li class="dropdown"><a href="">Our Partners</a>
+                                                <li class="dropdown"><a>Our Partners</a>
                                                     <ul>
-                                                        <li class="dropdown"><a href="">Growth Partner</a>
+                                                        <li class="dropdown"><a>Growth Partner</a>
                                                            <ul><li><a href="https://ameritoreinfra.com/" target="_blank">Ameritore</a></li></ul>
                                                         </li>
-                                                        <li><a href="">Space Partner</a>
+                                                        <li><a>Space Partner</a>
                                                             <ul><li><a href="https://playworkz.co/" target="_blank">Playworks</a></li></ul>
                                                         </li>
 
@@ -95,7 +127,7 @@
                                                 </li>
                                                 <li><a href="clients.html">Our Clients</a>
                                                 </li>
-                                                <li><a href="index.html#footer">Contact</a></li>
+                                                <li><a href="index.html#appointment-area">Contact</a></li>
                                             </ul>
                                         </div>
                                     </nav>
@@ -115,16 +147,26 @@
   <!-- Heading -->
 
 
-  <!-- Logos -->
-  <div style="display: flex; gap: 40px; flex-wrap: wrap; justify-content:space-around; margin-top: 40px;">
-    <img src="images/resources/p-1.jpg" alt="Logo 1" style="height: 80px;">
-    <img src="images/resources/p-3.png" alt="Logo 2" style="height: 80px;">
-    <img src="images/resources/p-2.jpg" alt="Logo 3" style="height: 80px;">
-    <img src="images/resources/p-4.jpg" alt="Logo 4" style="height: 100px;">
-    <!-- Placeholder for upcoming logos -->
+<!-- Logos -->
+<div class="logo-slider" style="margin-top: 40px; margin-bottom: 20px;background-color: rgb(238, 237, 237);">
+  <div class="logo-track">
+    <img src="images/resources/p-1.jpg" alt="Logo 1">
+    <img src="images/resources/p-3.png" alt="Logo 2">
+    <img src="images/resources/p-2.jpg" alt="Logo 3">
+    <img src="images/resources/p-4.jpg" alt="Logo 4">
+    <img src="images/resources/p-5.jpg" alt="Logo 5">
+    <!-- Repeat logos for smooth infinite effect -->
+    <img src="images/resources/p-1.jpg" alt="Logo 1">
+    <img src="images/resources/p-3.png" alt="Logo 2">
+    <img src="images/resources/p-2.jpg" alt="Logo 3">
+    <img src="images/resources/p-4.jpg" alt="Logo 4">
+    <img src="images/resources/p-5.jpg" alt="Logo 5">
   </div>
+</div>
+
+
       <div style="margin-top: 60px; font-size: 2.2em; color: #555;">
-      <p>And More...</p>
+      <p>And Counting...</p>
     </div>
 </section>
 
@@ -223,7 +265,7 @@
                                             <span class="icon-shipping-and-delivery"></span>
                                         </div>
                                         <div class="text">
-                                            <p>info@tycoonsreality.com</p>
+                                            <p>info@tycoonsrealty.in</p>
                                         </div>
                                     </div>
                                 </div>
