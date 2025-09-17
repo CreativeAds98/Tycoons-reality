@@ -15,19 +15,17 @@
     <!-- For IE -->
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
 <style>
-
-
 .logo-slider {
   overflow: hidden;
   position: relative;
   width: 100%;
-  background: #fff;
+  background: #f5f5f5;
   padding: 20px 0;
 }
 
 .logo-track {
   display: flex;
-  width: calc(200%); /* Double width for infinite loop */
+  width: max-content; /* adjust dynamically */
   animation: scroll 20s linear infinite;
 }
 
@@ -35,11 +33,6 @@
   height: 80px;
   margin: 0 40px;
   object-fit: contain;
-}
-
-/* Adjust one logo’s height */
-.logo-track img:nth-child(4) {
-  height: 100px;
 }
 
 @keyframes scroll {
@@ -156,22 +149,14 @@
 
 <!-- Logos -->
 <div class="logo-slider" style="margin-top: 40px; margin-bottom: 20px;background-color: rgb(238, 237, 237);">
-  <div class="logo-track">
+  <div class="logo-track" id="logoTrack">
     <img src="images/resources/p-1.jpg" alt="Logo 1">
     <img src="images/resources/p-3.png" alt="Logo 2">
     <img src="images/resources/p-2.jpg" alt="Logo 3">
     <img src="images/resources/p-4.jpg" alt="Logo 4">
     <img src="images/resources/p-5.jpg" alt="Logo 5">
-    <!-- Repeat logos for smooth infinite effect -->
-    <img src="images/resources/p-1.jpg" alt="Logo 1">
-    <img src="images/resources/p-3.png" alt="Logo 2">
-    <img src="images/resources/p-2.jpg" alt="Logo 3">
-    <img src="images/resources/p-4.jpg" alt="Logo 4">
-    <img src="images/resources/p-5.jpg" alt="Logo 5">
-   
-
-
   </div>
+</div>
 </div>
 
 
@@ -305,7 +290,24 @@
     </div>
 
     <div class="scroll-to-top scroll-to-target" data-target="html"><span class="fa fa-angle-up"></span></div>
+    <script>
+document.addEventListener("DOMContentLoaded", function () {
+  const track = document.getElementById("logoTrack");
+  const logos = track.innerHTML; 
 
+  // Duplicate logos until width is more than viewport * 2
+  track.innerHTML += logos;
+
+  // Adjust keyframes dynamically (important!)
+  const styleSheet = document.styleSheets[0];
+  styleSheet.insertRule(`
+    @keyframes scroll {
+      from { transform: translateX(0); }
+      to   { transform: translateX(-50%); }
+    }
+  `, styleSheet.cssRules.length);
+});
+</script>
     <script src="js/jquery.js"></script>
     <script src="js/appear.js"></script>
     <script src="js/bootstrap.bundle.min.js"></script>
