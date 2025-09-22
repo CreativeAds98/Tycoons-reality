@@ -3302,7 +3302,7 @@ li .single-footer-contact-info .inner {
 @media only screen and (max-width: 767px) {
     .logo-box-style1,
     .logo-box-style2 {
-        margin: 10px 0 !important;   /* reduce top and bottom margin */
+        margin: 20px 0 !important;   /* reduce top and bottom margin */
         top: 0 !important;          /* reset any offset */
     }
 
